@@ -1,0 +1,26 @@
+.Profile {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: khaki;
+  background-color: #008fcc;
+  background-image: url("https://www.transparenttextures.com/patterns/connected.png");
+  }
+
+  /* desktop */
+  @media only screen and (min-width: 1024px) {
+    .Profile {
+      width: 30%;
+      float: left;
+      padding: 1.5em;
+      margin-left: 40px;
+    }
+    .container {
+      width: 60%;
+      float: right;
+      padding: 1.5em;
+    }
+  }
