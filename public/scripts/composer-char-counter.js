@@ -1,10 +1,16 @@
 $(document).ready(function() {
-    $("#btn").on('click', function() {
-        console.log(this); //The this keyword is a reference to the button
-      });
-  });
+    $("#tweet-text").on('input', function() {
+        const count = $(this).siblings().find(".counter")
+        let inputCount = 140 - $("#tweet-text").val().length;
+        count.text(inputCount);
+
+        if (inputCount >= 0) {
+            count.css('color', 'black');
+        } else {
+            count.css('color', 'red');
+        }  
+      
+    });
+});
 
   
-  $("#btn").on('click', () => {
-    console.log(this); //The this keyword here refers to something else!
-  });
