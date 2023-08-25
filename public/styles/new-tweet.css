@@ -1,13 +1,20 @@
 .new-tweet {
-    margin: 10 auto;
+    margin: 20px;
   }
   
   .tweet-textarea {
-    border: 0;
+    border: 5;
     border-width: auto;
     border-bottom: 2px solid #000306;
     background-color: transparent;
     width: 100%;
+  }
+
+  .tweet-container {
+    border: 2px solid #000306;
+    padding: 1.5em;
+    padding-bottom: 0;
+    margin: 20px;
   }
   
   .counter {
