@@ -3,6 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+$('.error-message').hide();
+$('.new-tweet').hide();
 $(()=>{
     const data = [
       {
@@ -29,6 +31,13 @@ $(()=>{
       }
     ]
   
+
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
     const renderTweets = function(tweets) {
       $('.tweet-container').empty()
       for (let item of tweets) {      // loops through tweets
@@ -42,13 +51,13 @@ $(()=>{
       <article class = "tweetArticle">
       <header class="old-tweets-header">
         <div class="profile-picture">
-        <img src="${tweet.user.avatars}" alt="avatar">
-        <p>${tweet.user.name}</p>   
+        <img src="${escape(tweet.user.avatars)}" alt="avatar">
+        <p>${escape(tweet.user.name)}</p>    
         </div>      
         <p id="profile-name">${tweet.user.handle}</p>
     
       </header>
-        <p id="tweet-text" class="new-tweet-textarea">${tweet.content.text}</p>
+      <p id="tweet-text" class="new-tweet-textarea">${escape(tweet.content.text)}</p>
     
       <footer class="old-tweets-footer">
       <p id = "formattedTime">${formatDate(tweet.created_at)}</p>
@@ -62,36 +71,62 @@ $(()=>{
     `
     return $tweet;
     }
+
+    const composeTweet = $('.nav-button')
+    composeTweet.on('click', function () {
+      if ($('.new-tweet').is(":hidden")) {
+        $('.new-tweet').slideDown( "slow" );
+        $('form').slideup('slow');
+      }
+    })
+  
     const form = $('form');
   form.on("submit", function (event)  {
     event.preventDefault();
     console.log('form submission!');
-    const data =$( this ).serialize();
+    const tweetContent = $(this).find('textarea[name="text"]').val();
+    if (!tweetContent || tweetContent.trim() === "") {
+      $(".error-message").html(
+        `<p><i class="fa-solid fa-triangle-exclamation"></i>Tweet can not be empty, content needed!<i class="fa-solid fa-triangle-exclamation"></i></p>`
+      );
+      $('.error-message').slideDown( "slow" );
+      return false;
+    }
 
+    if (tweetContent.length > 140) {
+      $(".error-message").html(
+        `<p><i class="fa-solid fa-triangle-exclamation"></i>Tweet content is too long <i class="fa-solid fa-triangle-exclamation"></i></p>`
+      );
+      $('.error-message').slideDown( "slow" );
+      return false;
+    }
+    
+    const data =$( this ).serialize();
     $.ajax({
       type: "POST",
       url: '/tweets',
-      data: data,
+      data
+    })
+    .then(() => {
+      loadTweets()
     });
-
   });
   const loadTweets = function () {
     $.ajax({
       method: "GET",
       dataType: "json",
       url: 'http://localhost:8080/tweets',
-      // success ()
-      // renderTweets()
     })
-    .done((tweetData)=>{
-      console.log("this is tweet loaded", tweetData)
+    .then((tweetData)=>{
       renderTweets(tweetData)
+      $("#tweet-text").val('');
+      $('.counter').val(140);
+      $(".tweetArticle").append(tweetData);
     })
   }
   loadTweets();
-
+  
   const formatDate = function (timeStamp) {
-    let date = new Date();
     return timeago.format(timeStamp);
   }
 });
