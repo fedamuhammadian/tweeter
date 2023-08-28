@@ -29,4 +29,4 @@ This repository is the starter code for the project: Students will fork and clon
 # Vacant Tweet error
 !["Empty tweet"](https://github.com/fedamuhammadian/tweeter/blob/master/docs/empty-tweet-error.png)
 # Long Tweet error 
-!["Long Tweet error"](long-tweet-error.png)
+!["Long Tweet error"](https://github.com/fedamuhammadian/tweeter/blob/master/docs/long-tweet-error.png)
