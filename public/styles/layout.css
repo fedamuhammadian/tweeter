@@ -78,14 +78,14 @@ body {
 }
 
 
-.old-tweets-header {
+.tweets-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px;
  }
 
-.old-tweets-footer {
+.tweets-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;

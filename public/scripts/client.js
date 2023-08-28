@@ -33,9 +33,8 @@ $(()=>{
   
 
     const escape = function (str) {
-      let div = document.createElement("div");
-      div.appendChild(document.createTextNode(str));
-      return div.innerHTML;
+      let div = $("<div></div>").text(str);
+      return div.html();
     };
 
     const renderTweets = function(tweets) {
@@ -49,7 +48,7 @@ $(()=>{
     const createTweetElement = function(tweet) {
     let $tweet = `
       <article class = "tweetArticle">
-      <header class="old-tweets-header">
+      <header class="tweet-header">
         <div class="profile-picture">
         <img src="${escape(tweet.user.avatars)}" alt="avatar">
         <p>${escape(tweet.user.name)}</p>    
@@ -57,7 +56,7 @@ $(()=>{
         <p id="profile-name">${tweet.user.handle}</p>
     
       </header>
-      <p id="tweet-text" class="new-tweet-textarea">${escape(tweet.content.text)}</p>
+      <p id="tweet-text" class="tweet-textarea">${escape(tweet.content.text)}</p>
     
       <footer class="old-tweets-footer">
       <p id = "formattedTime">${formatDate(tweet.created_at)}</p>
@@ -100,7 +99,7 @@ $(()=>{
       $('.error-message').slideDown( "slow" );
       return false;
     }
-    
+
     const data =$( this ).serialize();
     $.ajax({
       type: "POST",
