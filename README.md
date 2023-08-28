@@ -16,3 +16,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- timeago.js 4.0.2
+- body-parser 1.15.2
+- md5 2.1.0
+- chance 1.0.2
