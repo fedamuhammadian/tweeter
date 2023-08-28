@@ -20,3 +20,13 @@ This repository is the starter code for the project: Students will fork and clon
 - body-parser 1.15.2
 - md5 2.1.0
 - chance 1.0.2
+
+## Screenshots of Webpage 
+# Desktop view
+!["Desktop View"](https://github.com/fedamuhammadian/tweeter/blob/master/docs/Desktop-view.png)
+# Tablet/ Mobile view
+!["Mobile View"](https://github.com/fedamuhammadian/tweeter/blob/master/docs/tablet-view.png)
+# Vacant Tweet error
+!["Empty tweet"](https://github.com/fedamuhammadian/tweeter/blob/master/docs/empty-tweet-error.png)
+# Long Tweet error 
+!["Long Tweet error"](long-tweet-error.png)
