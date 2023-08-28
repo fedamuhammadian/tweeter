@@ -8,6 +8,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
@@ -18,13 +19,12 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="dist/timeago.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@4.0.2/dist/timeago.min.js"></script>
 
     <!-- App JS -->
-    <script src="https://cdn.jsdelivr.net/npm/timeago.js@4.0.2/dist/timeago.min.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   </head>
 
   <body>
@@ -33,31 +33,23 @@
       <div class="nav-bar">
       <span>tweeter</span>
       <div class="nav-new-tweet">
-        <button type="button" class="nav-button"><strong>Write</strong> a new tweet</button><br>
+      <button type="button" class="nav-button"><strong>Write</strong> a new tweet</button><br>
       <i class="fas fa-angle-double-down" id="nav-icon"></i>
+    </div>
+    </div>
+    </nav>
+    <header class="Profile">
+      <div class="profile-picture">
+          <img src="/images/profile-icon.png"> 
       </div>
-    </div>
-  </nav>
-  <header>
-    <style>
-      header {
-      display: grid;
-      place-items: center;
-      text-align: center;
-      }
-    </style>
-    <div>
-        <img src="/images/profile-icon.png" width="128" height="128">
+      <br>
+      <div class="profile-name">
+          <h2>Amy Mansell</h2>
       </div>
-    </div>
-    <br>
-    <div>
-        <h2>Amy Mansell</h2>
-    </div>
-</header>
+  </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container-left-aligned">
+    <main class="container">
       <p class="error-message"></p>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
@@ -72,7 +64,7 @@
           </form><br>
       </section>
       <section class="tweet-container">
-    </section><br>
+      </section>
     </main>
   </body>
 </html>

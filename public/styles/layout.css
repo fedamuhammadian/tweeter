@@ -14,46 +14,40 @@ html {
  * Global layout stuff
  */
 
-body {
-  color: #4f4d47;
-  background-color: #f5f2ef;
-  font-size: 20px;
+ body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: sans-serif;
 }
+
 body {
   padding-top: 150px;
-  margin: auto;
 }
 
 .container {
   width: 90%;
   background-color: #f4f1ec;
-  margin: 20px;
+  margin: 0 auto;
 }
 
-.tweet-container:hover {
-  box-shadow: 10px 10px 3px 9px rgb(166, 168, 169)
- }
-
 .tweet-container {
-  border: 2px solid #000306;
-  padding: 2.5em;
+  padding: 1.5em;
   padding-bottom: 0;
-  margin: 20px;
 }
 
 .tweetArticle {
   border: 2px solid #000306;
-  padding: 2.5em;
+  padding: 1.5em;
   padding-bottom: 0;
-  margin: 20px;
 }
 
 .tweetArticle:hover {
-  box-shadow: 5px 5px 1px 4px rgb(166, 168, 169);
+  box-shadow: 5px 5px 1px 4px rgb(166, 166, 166);
 }
 
 #profile-name {
-  color: rgb(180 , 180, 180);
+  color: rgb(160, 160, 160);
 }
 
 .tweet-header {
@@ -77,26 +71,11 @@ body {
   gap: 5px;
 }
 
-
-.tweets-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px;
- }
-
-.tweets-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px;
- }
-
 .error-message {
+  border: 4px solid red;
   padding: 0.2em;
   color: red;
 }
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
