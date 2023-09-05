@@ -7,6 +7,7 @@ nav {
   padding-right: 1.5em;
   position: fixed;
   top: 0;
+  align-items: stretch;
 }
   
 nav span {
@@ -37,6 +38,13 @@ nav button {
 #nav-icon {
   color: red;
   animation: moveUpDown 2s ease-in-out infinite;
+}
+@media only screen and (max-width: 1023px) {
+  nav {
+    background-color: #008fcc;
+    ;
+    background-image: url('https://www.transparenttextures.com/patterns/connected.png');
+  }
 }
 
 @keyframes moveUpDown {

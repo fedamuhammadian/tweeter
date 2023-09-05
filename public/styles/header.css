@@ -16,7 +16,10 @@
       width: 30%;
       float: left;
       padding: 1.5em;
+      margin-top: 40px;
       margin-left: 40px;
+      background-color: none;
+      background-image: url(https://www.transparenttextures.com/patterns/connected.png")
     }
     .container {
       width: 60%;
