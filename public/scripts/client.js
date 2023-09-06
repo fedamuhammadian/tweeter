@@ -7,7 +7,7 @@
 $(()=>{
   // in order to hide the error messages and new tweet 
   $('.error-message').hide();
-  $('.new-tweet').hide();
+  //$('.new-tweet').hide();
     
   const escape = function (str) {
     let div = $("<div></div>").text(str);

@@ -1,5 +1,6 @@
 .new-tweet {
   margin: 10 auto;
+  display: block;
 }
 
 .tweet-textarea {

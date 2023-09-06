@@ -27,8 +27,12 @@ body {
 
 .container {
   width: 90%;
-  background-color: #f1eeea;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  background-color: #f4f1ec;
+  padding: 90px;
+  display: block;
 }
 
 .tweet-container {
