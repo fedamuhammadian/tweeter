@@ -61,8 +61,8 @@ $(()=>{
   event.preventDefault();
   console.log('form submission!');
 
-  let validTweet = $("#tweet-text").val().length;
-  if (validTweet === 0) {
+  const tweetContent = $("#tweet-text").val().trim(); 
+  if (tweetContent.length === 0) {
     $(".error-message").html(
       `<p><i class="fa-solid fa-triangle-exclamation"></i>Tweet can not be empty, content requried!<i class="fa-solid fa-triangle-exclamation"></i></p>`
     );
@@ -70,7 +70,7 @@ $(()=>{
     return false;
   }
 
-  if ( validTweet > 140) {
+  if ( tweetContent.length > 140) {
     $(".error-message").html(
       `<p><i class="fa-solid fa-triangle-exclamation"></i>Tweet is too long and can not be posted" <i class="fa-solid fa-triangle-exclamation"></i></p>`
     );
