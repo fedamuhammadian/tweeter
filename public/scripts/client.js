@@ -14,13 +14,6 @@ $(()=>{
     return div.html();
   };
 
-  const renderTweets = function(tweets) {
-    $('.tweet-container').empty()
-    for (let item of tweets) {      
-      const result = createTweetElement(item) 
-      $('.tweet-container').append(result)  
-    }
-  }
   // creates html for tweet
   const createTweetElement = function(tweet) {
     let $tweet = `
@@ -54,7 +47,14 @@ $(()=>{
       $('.new-tweet').slideDown( "slow" );
       $('form').slideup('slow');
     }
-  })  
+  })
+  const renderTweets = function(tweets) {
+    $('.tweet-container').empty()
+    for (let item of tweets) {      
+      const result = createTweetElement(item) 
+      $('.tweet-container').append(result)  
+    }
+  }  
 
   const form = $('form');
   form.on("submit", function (event)  {
